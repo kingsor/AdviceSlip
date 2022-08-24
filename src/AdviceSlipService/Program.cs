@@ -1,8 +1,6 @@
 using AdviceSlipService.Models;
 using AdviceSlipService.Services;
 using AdviceSlipService.Services.Interfaces;
-using Hellang.Middleware.ProblemDetails;
-using Microsoft.Extensions.Caching.Memory;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,21 +24,11 @@ builder.Services.Configure<CacheOptions>(
 
 builder.Services.AddScoped<IAdviceSlipProviderService, AdviceSlipProviderService>();
 
-//builder.Services.AddProblemDetails(options =>
-//{
-//    options.Map<ApplicationException>(ex =>
-//    new StatusCodeProblemDetails(StatusCodes.Status503ServiceUnavailable)
-//    {
-//        Title = "Services Unavailable"
-//    });
-//});
-
 builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 
 app.UseHttpsRedirection();
-//app.UseProblemDetails();
 
 // Configure the HTTP request pipeline.
 var isSwaggerEnabled = builder.Configuration.GetValue<bool>("AppSettings:EnableSwagger");
@@ -50,13 +38,11 @@ if (isSwaggerEnabled)
     app.UseSwaggerUI();
 }
 
-//app.UseSerilogRequestLogging(options =>
-//{
-//    options.IncludeQueryInRequestPath = true;
-//});
-
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+
+public partial class Program { }
