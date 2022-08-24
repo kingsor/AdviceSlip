@@ -40,7 +40,9 @@ namespace AdviceSlipService.Services
                 _cache.Set(request.Topic, adviceList, _cacheEntryOptions);
             }
 
-            return new AdviceResponse(adviceList.Take(request.Amount).ToList());
+            var result = request.Amount == int.MinValue ? adviceList : adviceList.Take(request.Amount).ToList();
+
+            return new AdviceResponse(result);
         }
 
         private async Task<List<string>> SearchAdviceFromApi(string topic)

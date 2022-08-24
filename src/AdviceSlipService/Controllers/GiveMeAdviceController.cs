@@ -20,15 +20,20 @@ namespace AdviceSlipService.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(AdviceResponse), StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         //[ProducesDefaultResponseType]
         public async Task<IActionResult> Post(AdviceRequest request)
         {
             // request parameter validation
-            if (request == null || string.IsNullOrEmpty(request.Topic))
+            if (!ModelState.IsValid)
             {
-                return BadRequest("The request field 'topic' is required.");
+                return BadRequest(ModelState);
             }
+
+            //if (request == null || string.IsNullOrEmpty(request.Topic))
+            //{
+            //    return BadRequest("The request field 'topic' is required.");
+            //}
 
             var result = await _adviceSlipProviderService.GetAdviceSlip(request);
 
