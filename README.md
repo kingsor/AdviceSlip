@@ -20,9 +20,8 @@ source.
 
 More infos in the pdf doc [Software Engineer Assignment](/Software%20Engineer%20Assignment%20.pdf)
 
-:::info
-There is no limit on the usage of external frameworks or libraries
-:::
+> There is no limit on the usage of external frameworks or libraries
+
 
 ## Execution
 
@@ -39,6 +38,8 @@ Il controller a sua volta utilizza un service che implementa l'interfaccia `IAdv
 
 Il service utilizza la classe `MemoryCache` messa a disposizione del framework per gestire una cache locale in memoria relativa alle chiamate all'endpoint.
 
+Per il logging ho utilizzato [Serilog](https://serilog.net/) che consente di scrivere i log oltre che su console anche su file, su database o su servizi centralizzati tipo [Seq](https://datalust.co/seq).
+
 
 ## Riferimenti
 
@@ -48,6 +49,8 @@ Di seguito i post che ho consultato per chiarirmi le idee sull'utilizzo della ca
 - [In-memory caching in ASP.NET Core](https://blexin.com/it/blog/in-memory-caching-in-asp-net-core/)
 - [How to test your C# Web API](https://timdeschryver.dev/blog/how-to-test-your-csharp-web-api)
 - [Should you unit-test API/MVC controllers in ASP.NET Core?](https://andrewlock.net/should-you-unit-test-controllers-in-aspnetcore/)
+- [Getting Started with xUnit.net](https://xunit.net/docs/getting-started/netcore/visual-studio)
+- [Serilog Best Practices](https://benfoster.io/blog/serilog-best-practices/)
 
 
 
