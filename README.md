@@ -18,6 +18,36 @@ by a string.
 The Advice Slip JSON public API (https://api.adviceslip.com/) should be used as the data
 source.
 
-More infos in the pdf doc [Software Engineer Assignment](/Software Engineer Assignment .pdf)
+More infos in the pdf doc [Software Engineer Assignment](/Software%20Engineer%20Assignment%20.pdf)
+
+:::info
+There is no limit on the usage of external frameworks or libraries
+:::
+
+## Execution
+
+Per realizzare questo progetto ho utilizzato asp dotnet core + dotnet6 + C#, il tutto tramite Visual Studio 2022.
+
+Per lanciare il progetto è necessario fare il clone del repository ed aprire con VS2022 la solution `AdviceSlip.sln` presente nel folder `src`.
+
+All'interno della solution sono presenti due progetti:
+- AdviceSlipService : web api che implementa i requisiti
+- AdviceSlipServiceTests : test di integrazione sulla web api
+
+Il progetto utilizza un controller per esporre l'endpoint `GiveMeAdvice`.
+Il controller a sua volta utilizza un service che implementa l'interfaccia `IAdviceSlipProviderService`.
+
+Il service utilizza la classe `MemoryCache` messa a disposizione del framework per gestire una cache locale in memoria relativa alle chiamate all'endpoint.
+
+
+## Riferimenti
+
+Di seguito i post che ho consultato per chiarirmi le idee sull'utilizzo della cache e sull'implementazione dei test.
+
+- [Cache in-memory in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-6.0)
+- [In-memory caching in ASP.NET Core](https://blexin.com/it/blog/in-memory-caching-in-asp-net-core/)
+- [How to test your C# Web API](https://timdeschryver.dev/blog/how-to-test-your-csharp-web-api)
+- [Should you unit-test API/MVC controllers in ASP.NET Core?](https://andrewlock.net/should-you-unit-test-controllers-in-aspnetcore/)
+
 
 
