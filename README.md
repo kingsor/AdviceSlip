@@ -45,12 +45,25 @@ Per il logging ho utilizzato [Serilog](https://serilog.net/) che consente di scr
 
 Di seguito i post che ho consultato per chiarirmi le idee sull'utilizzo della cache e sull'implementazione dei test.
 
+### Caching
 - [Cache in-memory in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-6.0)
 - [In-memory caching in ASP.NET Core](https://blexin.com/it/blog/in-memory-caching-in-asp-net-core/)
+- [Cache distribuita in Asp.NET Core](https://blexin.com/it/blog/cache-distribuita-in-asp-net-core/)
+
+### Testing
 - [How to test your C# Web API](https://timdeschryver.dev/blog/how-to-test-your-csharp-web-api)
+- [Fluent Assertions - Introduction](https://fluentassertions.com/introduction)
 - [Should you unit-test API/MVC controllers in ASP.NET Core?](https://andrewlock.net/should-you-unit-test-controllers-in-aspnetcore/)
 - [Getting Started with xUnit.net](https://xunit.net/docs/getting-started/netcore/visual-studio)
 - [Serilog Best Practices](https://benfoster.io/blog/serilog-best-practices/)
+
+### Handling Exceptions
+- [Handling Web API Exceptions with ProblemDetails middleware](https://andrewlock.net/handling-web-api-exceptions-with-problemdetails-middleware/)
+
+### Misc
+- [Options pattern in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0)
+- [Fetch the current weather using ASP.NET Core Web API and OpenWeather](https://jonhilton.net/2017/01/24/retrieve-data-from-a-third-party-openweather-api-using-asp-net-core-web-api/)
+
 
 
 
